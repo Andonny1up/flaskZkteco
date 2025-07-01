@@ -52,10 +52,9 @@ Correr el programa:
 ## Referencia de la API
 
 Enviar en el HEADER el TOKEN:
--H "X-API-TOKEN: 4854546484sds"
 
 ```http
-  POST /asistencias
+  -H "X-API-TOKEN: XXXXXXXXXX"
 ```
 
 ### obtener asistencias
