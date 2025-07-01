@@ -32,6 +32,17 @@ Instalar las dependencias
   pip install -r requirements.txt
 ```
 
+Copiar el archivo .env.example a .env
+
+| Variables | Description                                                                               |
+| :-------- | :---------------------------------------------------------------------------------------- |
+| `PORT`    | Puerto en el que se desplegara la app                                                     |
+| `TOKEN`   | **Requerido**. Token secreto. Se utiliza para aceptar peticiones que solo tengan el token |
+
+```bash
+  pip install -r requirements.txt
+```
+
 Correr el programa:
 
 ```bash
@@ -39,6 +50,13 @@ Correr el programa:
 ```
 
 ## Referencia de la API
+
+Enviar en el HEADER el TOKEN:
+-H "X-API-TOKEN: 4854546484sds"
+
+```http
+  POST /asistencias
+```
 
 ### obtener asistencias
 
@@ -56,6 +74,15 @@ Conten type: json
   "port": 4370,
   "password": xxxxx
 }
+```
+
+### Ejemplo con curl:
+
+```bash
+curl -X POST http://localhost:5000/asistencias \
+  -H "Content-Type: application/json" \
+  -H "X-API-TOKEN: XXXXXXXXXX" \
+  -d '{"ip": "192.xxx.xxx.xxx", "port": 4370, "password": xxxx}
 ```
 
 ### Borrar asistencias
